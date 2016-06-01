@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ObA-dk-sSI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Editing View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="PhotoEditingViewController" customModule="SarajeExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ou-nt-XGc">
+                                <rect key="frame" x="0.0" y="70" width="320" height="458"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t05-MU-mMk">
+                                <rect key="frame" x="26" y="30" width="61" height="30"/>
+                                <state key="normal" title="Negative"/>
+                                <connections>
+                                    <action selector="negativePressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="aPg-gQ-ebv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwe-CO-lAw">
+                                <rect key="frame" x="236" y="30" width="68" height="30"/>
+                                <state key="normal" title="Grayscale"/>
+                                <connections>
+                                    <action selector="grayscalePressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="nSj-94-wr3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qwe-CO-lAw" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" constant="10" id="3m8-w9-iKX"/>
+                            <constraint firstItem="qwe-CO-lAw" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" id="EWS-YQ-Mfi"/>
+                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="6Ou-nt-XGc" secondAttribute="bottom" id="Hsc-dm-8LN"/>
+                            <constraint firstItem="t05-MU-mMk" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" constant="10" id="JQ5-eb-yDC"/>
+                            <constraint firstItem="6Ou-nt-XGc" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" constant="50" id="Tbt-k8-vuU"/>
+                            <constraint firstItem="6Ou-nt-XGc" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="hDU-6y-GTX"/>
+                            <constraint firstAttribute="trailing" secondItem="6Ou-nt-XGc" secondAttribute="trailing" id="k3U-pQ-8yv"/>
+                            <constraint firstItem="t05-MU-mMk" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="10" id="yxd-e3-ryh"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="imageView" destination="6Ou-nt-XGc" id="7XY-Pz-UpX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="291" y="-138"/>
+        </scene>
+    </scenes>
+</document>
