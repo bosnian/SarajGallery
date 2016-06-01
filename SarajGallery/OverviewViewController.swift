@@ -39,7 +39,7 @@ class OverviewViewController: UIViewController {
     }
     
     func unauthorized(){
-        let alert = UIAlertController(title: "Error", message: "You must authorize app to use photos", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Error", message: "You must authorize app to use photos \n You can go to Settings / SarayGallery / Switch Photos ON", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
         alert.addAction(UIAlertAction(title: "Authorize", style: UIAlertActionStyle.Cancel, handler: {
             action in
