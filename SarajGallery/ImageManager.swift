@@ -7,6 +7,7 @@
 //
 
 import Photos
+import Async
 
 class ImageManager {
     
@@ -21,11 +22,15 @@ class ImageManager {
         
         if ( PHPhotoLibrary.authorizationStatus() != .Authorized) {
             PHPhotoLibrary.requestAuthorization { (authorizationStatus) in
-                if ( authorizationStatus == .Authorized){
-                    authorized()
-                } else {
-                    unauthorized()
+                Async.main {
+                    
+                    if ( authorizationStatus == .Authorized){
+                        authorized()
+                    } else {
+                        unauthorized()
+                    }
                 }
+                
             }
         } else {
             authorized()

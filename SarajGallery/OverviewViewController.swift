@@ -8,7 +8,7 @@
 
 import UIKit
 import Photos
-import Toast_Swift
+
 
 class OverviewViewController: UIViewController {
 
@@ -39,7 +39,13 @@ class OverviewViewController: UIViewController {
     }
     
     func unauthorized(){
-        self.view.makeToast("Not authorized to access photos")
+        let alert = UIAlertController(title: "Error", message: "You must authorize app to use photos", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Authorize", style: UIAlertActionStyle.Cancel, handler: {
+            action in
+            ImageManager.authorize(self.authorized, unauthorized: self.unauthorized)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func showViewForImageDownload(){

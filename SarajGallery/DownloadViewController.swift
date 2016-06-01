@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Toast_Swift
 
 class DownloadViewController: UIViewController {
     
@@ -24,7 +23,9 @@ class DownloadViewController: UIViewController {
         if ImageDownloader.validateUrl(urlInput.text) {
             ImageDownloader.downloadImage(urlInput.text!, success: gotImage, fail: failedToDownload)
         } else {
-            self.view.makeToast("Wrong url")
+            let alert = UIAlertController(title: "Error", message: "Invalid url", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     
@@ -32,11 +33,15 @@ class DownloadViewController: UIViewController {
         self.imageView.image = img
         
         ImageDownloader.saveImage(img, path: ImageDownloader.getRandomPNGName())
-        self.view.makeToast("Image saved")
+        let alert = UIAlertController(title: "Info", message: "Images saved", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func failedToDownload(){
-        self.view.makeToast("Could not download")
+        let alert = UIAlertController(title: "Error", message: "Could not downliad", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func closeView(){
